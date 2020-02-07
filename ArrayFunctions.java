@@ -1,0 +1,68 @@
+import java.util.Arrays;
+
+public class ArrayFunctions {
+    static int isMemberOfUnsortedArray(int[] array, int key) {
+        // Call program (i).
+        int[] sorted = sort(array);
+        // Call program (ii).
+        int result = isMemberOfSortedArray(sorted, key);
+        return result;
+    }
+    
+    
+    
+    // Program (i).
+    static int[] sort(int[] array) {
+      int n = array.length; 
+      for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+          if (array[j] > array[j+1]) { 
+                  // swap arr[j+1] and arr[i] 
+                  int temp = array[j]; 
+                  array[j] = array[j+1]; 
+                  array[j+1] = temp; 
+          } 
+        }     
+      }
+      return array;
+    }
+
+
+
+    // Program (ii)
+    static int isMemberOfSortedArray(int[] array, int key) {
+        int result = binarySearch(array, key);
+        if(result >= 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+
+
+    static int binarySearch(int[] array, int key) {
+      int l = 0;
+      int r = array.length - 1; 
+        while (l <= r) { 
+            int m = l + (r - l) / 2; 
+  
+            // Check if x is present at mid 
+            if (array[m] == key) 
+                return m; 
+  
+            // If x greater, ignore left half 
+            if (array[m] < key) 
+                l = m + 1; 
+  
+            // If x is smaller, ignore right half 
+            else
+                r = m - 1; 
+        } 
+  
+        // if we reach here, then element was 
+        // not present 
+        return -1;
+    }
+}
