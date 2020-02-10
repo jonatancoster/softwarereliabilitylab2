@@ -6,9 +6,15 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String args[]) {
+      
+      // The name of the test cases file.
+      String filename = args[0];
+
+      // The number of test cases that has been used.
+      int numberOfTestCases = 0;
 
       try{
-        File testCases = new File("pairwise.txt");
+        File testCases = new File(filename);
         Scanner scanner = new Scanner(testCases);
         scanner.nextLine();
         while (scanner.hasNextLine()) {
@@ -28,9 +34,15 @@ public class Main {
           
           // Use algorithm to check if the key is in the array.
           boolean result = ArrayFunctions.isMemberOfUnsortedArray(array, key);
-          
 
+          numberOfTestCases++;
+          
           System.out.println(Arrays.toString(array) + "\t" + key + "\t" + result + "\t" + oracleResult);
+          
+          if(result != oracleResult) {
+            System.out.println("Number of test cases: " + numberOfTestCases);
+            break;
+          }
         }
         scanner.close();
       } catch(FileNotFoundException e) {
