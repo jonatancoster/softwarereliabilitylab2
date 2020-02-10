@@ -1,6 +1,8 @@
 import java.util.Arrays;
 
 public class ArrayFunctions {
+    // Program (iii). Returns 1 if the key is in the input array.
+    // Returns 0 otherwise.
     static int isMemberOfUnsortedArray(int[] array, int key) {
         // Call program (i).
         int[] sorted = sort(array);
