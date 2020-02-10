@@ -27,7 +27,7 @@ public class Main {
           boolean oracleResult = oracle(array, key);
           
           // Use algorithm to check if the key is in the array.
-          int result = ArrayFunctions.isMemberOfUnsortedArray(array, key);
+          boolean result = ArrayFunctions.isMemberOfUnsortedArray(array, key);
           
 
           System.out.println(Arrays.toString(array) + "\t" + key + "\t" + result + "\t" + oracleResult);

@@ -3,11 +3,11 @@ import java.util.Arrays;
 public class ArrayFunctions {
     // Program (iii). Returns 1 if the key is in the input array.
     // Returns 0 otherwise.
-    static int isMemberOfUnsortedArray(int[] array, int key) {
+    static boolean isMemberOfUnsortedArray(int[] array, int key) {
         // Call program (i).
         int[] sorted = sort(array);
         // Call program (ii).
-        int result = isMemberOfSortedArray(sorted, key);
+        boolean result = isMemberOfSortedArray(sorted, key);
         return result;
     }
     
@@ -32,12 +32,12 @@ public class ArrayFunctions {
 
 
     // Program (ii)
-    static int isMemberOfSortedArray(int[] array, int key) {
+    static boolean isMemberOfSortedArray(int[] array, int key) {
         int result = binarySearch(array, key);
         if(result >= 0) {
-            return 1;
+            return true;
         } else {
-            return 0;
+            return false;
         }
     }
 
