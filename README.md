@@ -2,4 +2,4 @@
 
 Specifying a test case file:
 
-> java Main pairwise.txt
+\> java Main pairwise.txt
