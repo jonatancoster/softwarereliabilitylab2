@@ -14,6 +14,7 @@ public class ArrayFunctions {
     
     
     // Program (i).
+    // Original code by Rajat Mishra (https://www.geeksforgeeks.org/bubble-sort/).
     static int[] sort(int[] array) {
       int n = array.length; 
       for (int i = 0; i < n-1; i++) {
@@ -43,7 +44,7 @@ public class ArrayFunctions {
 
 
 
-
+    // Original code by Rajat Mishra (https://www.geeksforgeeks.org/binary-search/).
     static int binarySearch(int[] array, int key) {
       int l = 0;
       int r = array.length - 1; 
