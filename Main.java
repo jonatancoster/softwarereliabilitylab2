@@ -37,13 +37,15 @@ public class Main {
 
           numberOfTestCases++;
           
-          System.out.println(Arrays.toString(array) + "\t" + key + "\t" + result + "\t" + oracleResult);
+          //System.out.println(Arrays.toString(array) + "\t" + key + "\t" + result + "\t" + oracleResult);
           
           if(result != oracleResult) {
             System.out.println("Number of test cases: " + numberOfTestCases);
             break;
           }
+
         }
+        System.out.println("Done");
         scanner.close();
       } catch(FileNotFoundException e) {
         System.out.println("An error occurred.");
